@@ -65,9 +65,11 @@ const loginCompanyCntrl = async (req, res) => {
          console.log(1);
         const company = await Company.findOne({ companyName: companyName});
          console.log(2);
+                console.log(company);
         if(!company) throw new Error('company name must be a valid one');
              console.log(3);
         const comparedPassword = bcrypt.compare(password, company.password);
+                        console.log(comparedPassword);
                   console.log(4);
         if(!comparedPassword) throw new Error('password must be valid please try again');
                   console.log(5);
